@@ -1,0 +1,11 @@
+.piece-wrapper {
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  background: red;
+  box-shadow: gray 2px 2px 2px 2px;
+  position: relative;
+  margin: 0;
+  display: inline-block;
+  top: 100px;
+}
