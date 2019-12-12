@@ -25,12 +25,6 @@ class Grid extends Component {
   dragOver = event => {
     event.preventDefault();
   };
-  dragLeave = () => {
-    console.log("Object is leaving");
-  };
-  dragEnter = () => {
-    console.log("box entered");
-  };
   render() {
     const { highlighted } = this.state;
     return (
