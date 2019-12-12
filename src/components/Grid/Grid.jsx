@@ -23,14 +23,7 @@ class Grid extends Component {
     target.classList.remove("grid-over");
   };
   dragOver = event => {
-    const { target } = event;
     event.preventDefault();
-    const squares = document.getElementsByClassName("square-wrapper");
-    for (let i = 0; i < squares.length; i++) {
-      target === squares[i]
-        ? squares[i].classList.add("grid-over")
-        : squares[i].classList.remove("grid-over");
-    }
   };
   dragLeave = () => {
     console.log("Object is leaving");
