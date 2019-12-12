@@ -7,13 +7,10 @@
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 25% 25% 25% 25%;
+  transition: 200ms ease-in;
 }
 
-.grid-square {
-  height: 250px;
-  width: 250px;
-  position: relative;
-  text-align: center;
-  margin: 0;
-  border: solid 1px black;
+.grid-over {
+  background: gray;
+  transition: 200ms ease-in;
 }

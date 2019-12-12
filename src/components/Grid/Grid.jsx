@@ -1,139 +1,131 @@
 import React, { Component } from "react";
 import { Piece } from "../Piece";
+import { Square } from "../Square";
 import "./Grid.css";
 
 class Grid extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      highlighted: false
+    };
   }
 
   drop = event => {
+    const { target } = event;
     event.preventDefault();
     const piece_id = event.dataTransfer.getData("piece_id");
     const card = document.getElementById(piece_id);
-    event.target.appendChild(card);
+    target.appendChild(card);
     card.style.display = "inline-block";
-    event.target.appendChild(card);
+    card.classList.remove("dragged");
+    target.appendChild(card);
+    target.classList.remove("grid-over");
   };
   dragOver = event => {
+    const { target } = event;
     event.preventDefault();
+    const squares = document.getElementsByClassName("square-wrapper");
+    for (let i = 0; i < squares.length; i++) {
+      target === squares[i]
+        ? squares[i].classList.add("grid-over")
+        : squares[i].classList.remove("grid-over");
+    }
+  };
+  dragLeave = event => {
+    const { target } = event;
+    console.log(target);
+    target.classList.remove("grid-over");
+  };
+  dragEnter = () => {
+    console.log("box entered");
   };
   render() {
+    const { highlighted } = this.state;
     return (
       <div className="grid-wrapper">
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
         >
           <Piece></Piece>
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
-        <div
-          className="grid-square"
-          onDrop={this.drop}
-          onDragOver={this.dragOver}
-        >
-          {this.props.children}
-        </div>
+        </Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
+        <Square
+          highlighted={highlighted}
+          drop={this.drop}
+          dragOver={this.dragOver}
+        ></Square>
       </div>
     );
   }

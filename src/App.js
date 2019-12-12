@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Grid } from "./components";
 
 class App extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <React.Fragment>
