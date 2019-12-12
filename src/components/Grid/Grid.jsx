@@ -13,7 +13,7 @@ class Grid extends Component {
     const piece_id = event.dataTransfer.getData("piece_id");
     const card = document.getElementById(piece_id);
     event.target.appendChild(card);
-    card.style.display = "block";
+    card.style.display = "inline-block";
     event.target.appendChild(card);
   };
   dragOver = event => {

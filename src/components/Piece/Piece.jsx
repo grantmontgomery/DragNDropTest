@@ -13,7 +13,9 @@ class Piece extends Component {
     }, 0);
   };
 
-  dragOver = event => {};
+  dragOver = event => {
+    event.stopPropagation();
+  };
 
   render() {
     return (
