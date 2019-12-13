@@ -9,8 +9,3 @@
   grid-template-rows: 25% 25% 25% 25%;
   transition: 200ms ease-in;
 }
-
-.grid-over {
-  background: gray;
-  transition: 200ms ease-in;
-}

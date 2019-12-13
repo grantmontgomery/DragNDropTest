@@ -10,12 +10,18 @@ class Piece extends Component {
   }
 
   dragStart = event => {
-    const { target } = event;
-    event.dataTransfer.setData("piece_id", target.id);
+    const { target, dataTransfer } = event;
+    dataTransfer.setData("piece_id", target.id);
+    const div = <div></div>;
+    // dataTransfer.setDragImage(document.createElement("div"), 0, 0);
     this.setState({ dragged: true });
     setTimeout(() => {
       target.style.display = "none";
     }, 0);
+  };
+
+  dragEnd = () => {
+    this.setState({ dragged: false });
   };
 
   dragOver = event => {
@@ -24,14 +30,21 @@ class Piece extends Component {
 
   render() {
     console.log(this.state.dragged);
+    const { dragged } = this.state;
     return (
       <div
+        className={`piece-handle ${dragged ? " noGhost" : ""}`}
+        onDragStart={this.dragStart}
+        onDragEnd={this.dragEnd}
+        onDragOver={this.dragOver}
         draggable="true"
         id="1"
-        onDragStart={this.dragStart}
-        onDragOver={this.dragOver}
-        className={`piece-wrapper ${this.state.dragged ? "dragged" : "still"}`}
-      ></div>
+      >
+        <div
+          draggable="false"
+          className={`piece-wrapper ${dragged ? " dragged" : ""}`}
+        ></div>
+      </div>
     );
   }
 }
