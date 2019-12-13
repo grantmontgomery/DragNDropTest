@@ -1,11 +1,11 @@
 .grid-wrapper {
   border: 1px solid black;
-  height: 1000px;
+  height: 500px;
   width: 1000px;
   margin-right: auto;
   margin-left: auto;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-rows: 50% 50%;
   transition: 200ms ease-in;
 }

@@ -1,0 +1,7 @@
+.experiment-wrapper {
+  height: 500px;
+  width: 1000px;
+  border: solid 1px black;
+  margin-left: auto;
+  margin-right: auto;
+}

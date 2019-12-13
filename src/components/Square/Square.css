@@ -2,11 +2,13 @@
   height: 250px;
   width: 250px;
   position: relative;
-  text-align: center;
   margin: 0;
   border: solid 1px black;
+  text-align: center;
+  transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .hover {
-  background: black;
+  background: rgb(240, 240, 240);
+  transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
